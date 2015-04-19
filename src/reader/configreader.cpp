@@ -12,24 +12,25 @@
  * 0. You just DO WHAT THE FUCK YOU WANT TO.
  */
 
-#include <iostream>
 #include "configreader.h"
 
-int main(int argc, char** argv) {
-
-	if (argc != 2) {
-		std::cout << std::endl << "Usage: reader <file>" << std::endl;
-		return -1;
-	}
-
-	std::string filename(argv[1]);
-
-	ConfigReader configReader(filename);
-
-	std::cout << "    ip: " << configReader.getIp() << std::endl;
-	std::cout << "  port: " << configReader.getPort() << std::endl;
-	std::cout << " https: " << std::boolalpha << configReader.isHTTPs() 
-		<< std::noboolalpha << std::endl;
-
-	return 0;
+ConfigReader::ConfigReader(std::string file) {
+	boost::property_tree::ini_parser::read_ini(file, pt);
 }
+
+std::string ConfigReader::getIp() {
+	return getParameter(CONFIG_IP);
+}
+
+int ConfigReader::getPort() {
+	return std::stoi(getParameter(CONFIG_PORT));
+}
+
+bool ConfigReader::isHTTPs() {
+	return boost::iequals(getParameter(CONFIG_HTTPS), "true");
+}
+
+std::string ConfigReader::getParameter(std::string parameter) {
+	return pt.get<std::string>(parameter);
+}
+
