@@ -1,15 +1,21 @@
+# --------------------------------------------------------------
+# unit testing module for 'boost-config-file-reader-src' library
+# --------------------------------------------------------------
 
-ENABLE_TESTING()
+enable_testing ()
 
-include_directories( ${boost-config-file-reader_SOURCE_DIR}/src
-					 ${Boost_INCLUDE_DIR} )
+include_directories (${boost-config-file-reader_SOURCE_DIR}/src)
+include_directories (${Boost_INCLUDE_DIR})
 
-link_directories( ${Boost_LIBRARY_DIRS} )
+link_directories (${Boost_LIBRARY_DIRS})
 
-ADD_EXECUTABLE( unit-tests reader/configreaderTest.cpp )
+add_executable (unit-tests
+	reader/configreaderTest.cpp)
 
-target_link_libraries( unit-tests 
-	${Boost_LIBRARIES} 
+target_link_libraries (unit-tests
+	boost-config-file-reader-src
+	${Boost_LIBRARIES}
 	${boost-config-file-reader_LIBRARIES})
 
-ADD_TEST( UnitTests unit-tests)
+add_test (UnitTests
+	unit-tests)
