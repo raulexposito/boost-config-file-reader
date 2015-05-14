@@ -15,7 +15,7 @@
  */
 
 #include <iostream>
-#include "configreader.h"
+#include "reader/configreader.h"
 
 int main(int argc, char** argv) {
 

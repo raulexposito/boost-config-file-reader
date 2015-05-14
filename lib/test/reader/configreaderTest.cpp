@@ -14,19 +14,8 @@
  * 0. You just DO WHAT THE FUCK YOU WANT TO.
  */
 
-#include "reader/configreader.h"
+#include "gtest/gtest.h"
 
-#define BOOST_TEST_DYN_LINK
-#define BOOST_TEST_MODULE "'configreader.cpp' Unit Tests"
-
-#include <boost/test/unit_test.hpp>
-
-BOOST_AUTO_TEST_CASE ( config_ini_with_parameters ) {
-
-  std::string configFile = "../config/config.ini";
-  ConfigReader configReader(configFile);
-  BOOST_CHECK( configReader.getIp() == "127.0.0.1" );
-  BOOST_CHECK( configReader.getPort() == 80 );
-  BOOST_CHECK( configReader.isHTTPs() == false );
+TEST(HelloTest, Easy) {
+  EXPECT_EQ(0, 0);
 }
-
