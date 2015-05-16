@@ -49,4 +49,9 @@ set_target_properties(libgmock PROPERTIES
 # I couldn't make it work with INTERFACE_INCLUDE_DIRECTORIES
 include_directories("${source_dir}/include")
 
+# --------------------------------------------------------------
+# subdirectory inclusion
+# --------------------------------------------------------------
+
 add_subdirectory(reader)
+

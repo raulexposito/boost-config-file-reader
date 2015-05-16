@@ -31,16 +31,16 @@ $ sudo apt-get install build-essential cmake libboost-all-dev -y
 
 # Execution:
 
-1. Execute `make` to create the executable (named
-`boost-config-file-reader-main` and placed under `main`). Google Test and
+1. Execute `make` to create the executable. Google Test and
 Google Mock will be downloaded and compiled.
-2. Execute it: `./main/boost-config-file-reader-main ../config/config.ini`.
+2. Run it: `./app/src/main/cpp/boost-config-file-reader-app
+../lib/src/main/resources/config.ini`.
 
 # Tests:
 
 1. Execute `make test` to run the tests from make.
-2. Execute `./lib/test/reader/filereader-test` to run the tests from Google
-Test.
+2. Execute `./lib/src/test/cpp/reader/configreader-test` to run the tests from
+Google Test.
 
 # References:
 
