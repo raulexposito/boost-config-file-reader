@@ -17,11 +17,12 @@ Ubuntu 14.04
 * `boost`
 * `cmake`
 * `gcc`
+* `astyle`
 
 You can install them with this command:
 
 ````
-$ sudo apt-get install build-essential cmake libboost-all-dev -y
+$ sudo apt-get install build-essential cmake libboost-all-dev astyle -y
 ````
 
 # First Steps:
