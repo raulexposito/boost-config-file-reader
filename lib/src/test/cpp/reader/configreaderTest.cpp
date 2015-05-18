@@ -16,6 +16,7 @@
 
 #include "gtest/gtest.h"
 
-TEST(HelloTest, Easy) {
-  EXPECT_EQ(0, 0);
+TEST(HelloTest, Easy)
+{
+	EXPECT_EQ(0, 0);
 }
